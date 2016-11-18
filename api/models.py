@@ -7,4 +7,4 @@ class ReceiveSentence(models.Model):
 
 class MorseCombination(models.Model):
     word = models.CharField(max_length = 1)
-    combination = models.IntegerField()
+    combination = models.CharField(max_length = 4)
