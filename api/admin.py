@@ -1,3 +1,8 @@
 from django.contrib import admin
+from .models import ReceiveSentence
 
-# Register your models here.
+class ReceiveSentenceAdmin(admin.ModelAdmin):
+    list_display = ('id', 'sentence', 'receive_date')
+    list_display_links = ('id', 'sentence', 'receive_date')
+
+admin.site.register(ReceiveSentence, ReceiveSentenceAdmin)
