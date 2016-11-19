@@ -34,7 +34,7 @@ def alphabet(request):
                         return Response({"error": "Unsupport word. Only alphabet", "sentence": request.data['sentence']})
 
                 word_dictionary = {}
-                word_dictionary['morse'] = morse
+                word_dictionary['morse'] = list(morse)
                 word_dictionary['word'] = word
 
                 combinations.append(word_dictionary)
