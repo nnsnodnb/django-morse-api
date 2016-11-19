@@ -14,8 +14,6 @@ def index(request):
 @permission_classes((AllowAny,))
 def alphabet(request):
     if request.method == 'POST':
-        print(request.data)
-        print('sentence' in request.data)
 
         if 'sentence' in request.data:
             sentence = request.data['sentence']
