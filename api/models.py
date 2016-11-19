@@ -1,5 +1,4 @@
 from django.db import models
-from datetime import datetime
 
 class ReceiveSentence(models.Model):
     sentence = models.CharField(max_length = 100)
