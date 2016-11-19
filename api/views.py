@@ -41,5 +41,5 @@ def alphabet(request):
 
             return Response(result)
 
-        return Response({"error": "Please formate", "format": {"sentence": "Hello"}, "data": request.data})
+        return Response({"error": "Please format", "format": {"sentence": "Hello"}, "data": request.data})
     return Response({"error": "Not allowed method"})
