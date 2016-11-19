@@ -28,7 +28,10 @@ def alphabet(request):
                 if word == ' ':
                     morse = ''
                 else:
-                    morse = MorseCombination.objects.filter(word = word)[0].combination
+                    try:
+                        morse = MorseCombination.objects.filter(word = word)[0].combination
+                    except Exception as e:
+                        return Response({"error": "Unsupport word. Only alphabet", "sentence": request.data['sentence']})
 
                 word_dictionary = {}
                 word_dictionary['morse'] = morse
