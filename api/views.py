@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
@@ -11,6 +12,7 @@ def index(request):
     return Response({'urls': [{'alphabet': 'http://127.0.0.1:8000/api/alphabet'}]})
 
 @api_view(['GET', 'POST'], exclude_from_schema = True)
+@csrf_exempt
 @permission_classes((AllowAny,))
 def alphabet(request):
     if request.method == 'POST':
