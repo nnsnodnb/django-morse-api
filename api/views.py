@@ -9,7 +9,7 @@ from .models import ReceiveSentence, MorseCombination
 @api_view(exclude_from_schema = True)
 @permission_classes((AllowAny,))
 def index(request):
-    return Response({'urls': [{'alphabet': 'http://127.0.0.1:8000/api/alphabet'}]})
+    return Response({'urls': [{'alphabet': '/api/alphabet'}]})
 
 @api_view(['GET', 'POST'], exclude_from_schema = True)
 @csrf_exempt
